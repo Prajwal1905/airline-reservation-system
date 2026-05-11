@@ -6,6 +6,7 @@ dotenv.config();
 
 const db = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
+const flightRoutes = require('./routes/flightRoutes');
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/flights', flightRoutes);
 
 // Test route
 app.get('/', (req, res) => {
